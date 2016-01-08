@@ -22,3 +22,76 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar {
+    background-color: #9b0f10;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    text-decoration: underline;
+}
+
+.jumbotron {
+    border: 1px solid #ebccd1;
+    background-color: #fff7f7;
+    /*border-color: #faebcc;
+    background-color: #fcf8e3;*/
+}
+
+.welcome-header {
+    font-size: 2em;
+    line-height: 1em;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.welcome-header .welcome-alert {
+    color: #9b0f10;
+    font-size: 1.85em;
+    font-weight: bold;
+}
+
+.welcome-content {
+    font-size: 20px;
+}
+
+.welcome-content a {
+    font-size: 20px;
+}
+
+.welcome-content ul {
+    margin-left: 10px;
+}
+
+.welcome-content ul li {
+    list-style-image: url("/content/images/glyphicons/glyphicons-153-check-g.png");
+    margin-bottom: 10px;
+}
+
+.welcome-content-red ul li {
+    list-style-image: url("/content/images/glyphicons/glyphicons-153-check-r.png");
+}
+
+.welcome-content ul li.glyphicon-address {
+    list-style-image: url("/content/images/glyphicons/glyphicons-21-home.png");
+}
+.welcome-content ul li.glyphicon-phone {
+    list-style-image: url("/content/images/glyphicons/glyphicons-442-phone-alt.png");
+}
+
+.welcome-content ul li.glyphicon-mail {
+    list-style-image: url("/content/images/glyphicons/glyphicons-11-envelope.png");
+}
+
+.welcome-content ul li.glyphicon-message {
+    list-style-image: url("/content/images/glyphicons/glyphicons-360-file-export.png");
+}
