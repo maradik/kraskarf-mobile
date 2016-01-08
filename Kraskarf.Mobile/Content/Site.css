@@ -23,6 +23,10 @@ textarea {
     max-width: 280px;
 }
 
+.xsmall {
+    font-size: 0.7em;
+}
+
 .navbar {
     background-color: #9b0f10;
 }
