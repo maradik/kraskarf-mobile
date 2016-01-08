@@ -43,6 +43,9 @@
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
     </Reference>
+    <Reference Include="Sider">
+      <HintPath>..\packages\Sider.0.9.5\lib\Sider.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -157,7 +160,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessors\BaseAccessor.cs" />
+    <Compile Include="Accessors\DeliveryTypeAccessor.cs" />
+    <Compile Include="Accessors\GettingFromCacheException.cs" />
     <Compile Include="Accessors\PaymentTypeAccessor.cs" />
+    <Compile Include="Accessors\ProductGroupAccessor.cs" />
+    <Compile Include="Accessors\PuttingToCacheException.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -167,6 +175,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\DeliveryTypeRepository.cs" />
+    <Compile Include="Repositories\IDeliveryTypeRepository.cs" />
+    <Compile Include="Repositories\IPaymentTypeRepository.cs" />
+    <Compile Include="Repositories\IProductGroupRepository.cs" />
+    <Compile Include="Repositories\PaymentTypeRepository.cs" />
+    <Compile Include="Repositories\ProductGroupRepository.cs" />
+    <Compile Include="Repositories\ReadEntityException.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
@@ -856,9 +872,7 @@
     <Content Include="Views\Home\_Payment.cshtml" />
     <Content Include="Views\Home\_Contacts.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

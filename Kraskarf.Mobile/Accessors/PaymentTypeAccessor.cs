@@ -7,13 +7,22 @@ using System.Text;
 using System.Web;
 using System.Web.Helpers;
 using Kraskarf.Mobile.Models;
+using Kraskarf.Mobile.Repositories;
 using NLog;
+using Sider;
 
 namespace Kraskarf.Mobile.Accessors
 {
-    public class PaymentTypeAccessor
+    public class PaymentTypeAccessor : BaseAccessor
     {
         private readonly ILogger logger = LogManager.GetLogger("PaymentTypeAccessor");
+
+        private readonly IPaymentTypeRepository paymentTypeRepository;
+
+        public PaymentTypeAccessor(IPaymentTypeRepository paymentTypeRepository)
+        {
+            this.paymentTypeRepository = paymentTypeRepository;
+        }
 
         public IEnumerable<PaymentType> GetAllPaymentTypes()
         {
@@ -21,17 +30,22 @@ namespace Kraskarf.Mobile.Accessors
 
             try
             {
-                var fileName = HttpContext.Current.Server.MapPath(@"~/App_Data/PaymentTypeData.js");
-                
-                using (var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(File.ReadAllText(fileName))))
+                var cacheKey = typeof(List<PaymentType>).ToString();
+                paymentTypes = GetFromCache<List<PaymentType>>(cacheKey);
+
+                if (paymentTypes == null)
                 {
-                    paymentTypes = (List<PaymentType>)new DataContractJsonSerializer(typeof(List<PaymentType>)).ReadObject(memoryStream);
+                    paymentTypes = paymentTypeRepository.GetAllPaymentTypes().ToList();
+                    PutToCache(cacheKey, paymentTypes);
+
+                    logger.Info("Типы оплат были прочитаны из источника, т.к. не найдены в кэше");
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                logger.Log(LogLevel.Error, e, "Не удалось получить перечень способов оплаты");    
+                logger.Error("Не удалось получить способы оплат");
             }
+
 
             return paymentTypes;
         }

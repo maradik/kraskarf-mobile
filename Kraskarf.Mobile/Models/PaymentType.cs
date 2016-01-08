@@ -1,7 +1,9 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Kraskarf.Mobile.Models
 {
+    [Serializable]
     [DataContract]
     public class PaymentType
     {
