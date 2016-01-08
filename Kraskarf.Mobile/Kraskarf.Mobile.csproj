@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,6 +157,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessors\PaymentTypeAccessor.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -177,6 +179,9 @@
     <Compile Include="Models\ProductGroup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ProductGroupData.js" />
+    <Content Include="App_Data\PaymentTypeData.js" />
+    <Content Include="App_Data\DeliveryTypeData.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -852,7 +857,7 @@
     <Content Include="Views\Home\_Contacts.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

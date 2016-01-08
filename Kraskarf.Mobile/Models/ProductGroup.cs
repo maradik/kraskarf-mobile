@@ -13,6 +13,7 @@ namespace Kraskarf.Mobile.Models
 
         public string Name { get; set; }
         public string DescriptionHtml { get; set; }
+        public string ImageSrc { get; set; }
         public IEnumerable<Product> Products { get; set; }
     }
 }

@@ -1,15 +1,20 @@
-﻿namespace Kraskarf.Mobile.Models
+﻿using System.Runtime.Serialization;
+
+namespace Kraskarf.Mobile.Models
 {
+    [DataContract]
     public class PaymentType
     {
         public PaymentType()
         {
+            Id = string.Empty;
             Name = string.Empty;
-            DescriptionHtml = string.Empty;
         }
 
-        public int Id { get; set; }
+        [DataMember]
+        public string Id { get; set; }
+
+        [DataMember]
         public string Name { get; set; }
-        public string DescriptionHtml { get; set; }
     }
 }
