@@ -11,7 +11,6 @@
     <title>@ViewBag.SiteTitle</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div id="top"></div>
@@ -27,11 +26,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/#top" title="Главная страница">Главная</a></li>
-                    <li><a href="/#catalog" title="Каталог товаров">Каталог</a></li>
-                    <li><a href="/#payment" title="Способы оплаты">Оплата</a></li>
-                    <li><a href="/#delivery" title="Способы доставки">Доставка</a></li>
-                    <li><a href="/#contacts" title="Контактная информация">Контакты</a></li>
+                    <li><a href="#top" class="smooth" title="Главная страница">Главная</a></li>
+                    <li><a href="#catalog" class="smooth" title="Каталог товаров">Каталог</a></li>
+                    <li><a href="#payment" class="smooth" title="Способы оплаты">Оплата</a></li>
+                    <li><a href="#delivery" class="smooth" title="Способы доставки">Доставка</a></li>
+                    <li><a href="#contacts" class="smooth" title="Контактная информация">Контакты</a></li>
                 </ul>
             </div>
         </div>
@@ -53,6 +52,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/site.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
