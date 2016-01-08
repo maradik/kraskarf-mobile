@@ -13,7 +13,7 @@ using Sider;
 
 namespace Kraskarf.Mobile.Accessors
 {
-    public class PaymentTypeAccessor : BaseAccessor
+    public class PaymentTypeAccessor : BaseAccessor, IPaymentTypeAccessor
     {
         private readonly ILogger logger = LogManager.GetLogger("PaymentTypeAccessor");
 

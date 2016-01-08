@@ -8,7 +8,7 @@ using NLog;
 
 namespace Kraskarf.Mobile.Accessors
 {
-    public class DeliveryTypeAccessor : BaseAccessor
+    public class DeliveryTypeAccessor : BaseAccessor, IDeliveryTypeAccessor
     {
         private readonly ILogger logger = LogManager.GetLogger("DeliveryTypeAccessor");
 

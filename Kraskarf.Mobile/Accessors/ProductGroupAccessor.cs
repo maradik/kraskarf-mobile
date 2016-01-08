@@ -8,7 +8,7 @@ using NLog;
 
 namespace Kraskarf.Mobile.Accessors
 {
-    public class ProductGroupAccessor : BaseAccessor
+    public class ProductGroupAccessor : BaseAccessor, IProductGroupAccessor
     {
         private readonly ILogger logger = LogManager.GetLogger("ProductGroupAccessor");
 
