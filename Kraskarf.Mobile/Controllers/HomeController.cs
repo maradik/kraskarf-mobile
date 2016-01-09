@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Kraskarf.Mobile.Accessors;
 using Kraskarf.Mobile.Repositories;
+using Kraskarf.Mobile.ViewModels;
 
 namespace Kraskarf.Mobile.Controllers
 {
@@ -23,10 +24,14 @@ namespace Kraskarf.Mobile.Controllers
 
         public ActionResult Index()
         {
-            var a = paymentTypeAccessor.GetAllPaymentTypes();
-            var b = deliveryTypeAccessor.GetAllDeliveryTypes();
-            var c = productGroupAccessor.GetAllProductGroups();
-            return View();
+            var viewModel = new HomeIndexViewModel
+            {
+                PaymentTypes = paymentTypeAccessor.GetAllPaymentTypes(),
+                DeliveryTypes = deliveryTypeAccessor.GetAllDeliveryTypes(),
+                ProductGroups = productGroupAccessor.GetAllProductGroups()
+            };
+
+            return View(viewModel);
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿@{
+﻿@model Kraskarf.Mobile.ViewModels.HomeIndexViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
 @Html.Partial("_AboutUs")
-@Html.Partial("_Catalog")
+@Html.Partial("_Catalog", Model)
 <hr />
 @Html.Partial("_Payment")
 <hr />
