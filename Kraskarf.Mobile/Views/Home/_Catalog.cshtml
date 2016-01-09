@@ -1,4 +1,64 @@
-﻿<div id="catalog">
+﻿@model Kraskarf.Mobile.ViewModels.HomeIndexViewModel
 
+<div id="catalog">
+    <h1>Материалы</h1>
+    @foreach (var productGroup in Model.ProductGroups)
+    {
+        <div class="row margin-bottom-s">
+            <div class="col-xs-12">
+                <h3 style="margin-top: 0px;">
+                    @productGroup.Name
+                </h3>
+            </div>
+            <div class="col-sm-2 hidden-xs">
+                <img src="@productGroup.ImageSrc" alt="@productGroup.Name" />
+            </div>
+            <div class="col-sm-10 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">Цена</th>
+                                    <th class="text-center">Количество</th>
+                                    <th class="text-center">Сумма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in productGroup.Products)
+                                {
+                                    <tr>
+                                        <td class="text-center"><b>@product.Name</b></td>
+                                        <td class="text-center">@product.Price&nbsp;р.</td>
+                                        <td class="text-center numbers-row"><input type="text" class="input-sm" value="0" /></td>
+                                        <td class="text-center">0,00</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 
+    <div class="row">
+        <div class="col-sm-2 hidden-xs">
+        </div>
+        <div class="col-sm-10 col-xs-12">
+            <div class="row">
+                <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12 text-right">
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <button class="btn btn-danger">Заказать в один клик!</button>
+                        </div>
+                        <div class="col-xs-5">
+                            <span><b>Итого: 0,00</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -219,6 +219,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\buttons.png" />
     <Content Include="Content\Images\glyphicons\glyphicons-1-glass.png" />
     <Content Include="Content\Images\glyphicons\glyphicons-10-magic.png" />
     <Content Include="Content\Images\glyphicons\glyphicons-100-vector-path-all.png" />

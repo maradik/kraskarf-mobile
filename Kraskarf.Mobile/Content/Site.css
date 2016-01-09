@@ -27,6 +27,22 @@ textarea {
     font-size: 0.7em;
 }
 
+.border-bottom {
+    border-bottom: 1px solid grey;   
+}
+
+.margin-bottom-s {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-m {
+    margin-bottom: 15px;
+}
+
+.margin-bottom-l {
+    margin-bottom: 20px;
+}
+
 .navbar {
     background-color: #9b0f10;
 }
@@ -98,4 +114,19 @@ textarea {
 
 .welcome-content ul li.glyphicon-message {
     list-style-image: url("/content/images/glyphicons/glyphicons-360-file-export.png");
+}
+
+.button_incdec {
+  margin: 0 0 0 5px;
+  text-indent: -9999px;
+  cursor: pointer;
+  width: 29px;
+  height: 29px;
+  float: left;
+  text-align: center;
+  background: url(/content/images/buttons.png) no-repeat;
+}
+
+.dec {
+  background-position: 0 -29px;
 }
